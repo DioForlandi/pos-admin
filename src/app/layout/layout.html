@@ -1,0 +1,46 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row" style="padding-right:0px">
+      <div class="mdl-layout-spacer"></div>
+      <button id="demo-menu-lower-right"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">more_vert</i>
+      </button>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="sample"
+                 id="fixed-header-drawer-exp">
+        </div>
+    </div>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+    for="demo-menu-lower-right">
+      <li class="mdl-menu__item">Some Action</li>
+      <li class="mdl-menu__item">Another Action</li>
+      <li disabled class="mdl-menu__item">Disabled Action</li>
+      <li class="mdl-menu__item">Yet Another Action</li>
+    </ul>
+  </header>
+
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Navigations</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" ui-sref="layout.cashier"><i class="material-icons">add_shopping_cart</i> Cashier</a>
+      <a class="mdl-navigation__link" href=""><i class="material-icons">restaurant_menu</i> Menu</a>
+      <a class="mdl-navigation__link" href=""><i class="material-icons">work</i> Employees</a>
+      <!-- <a class="mdl-navigation__link" href=""><i class="material-icons">perm_identity</i>Logout</a>
+    </nav> -->
+  </div>
+
+  <main class="mdl-layout__content">
+    <ui-view></iu-view>
+  </main>
+
+  <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__right-section">
+      <div class="mdl-logo">
+        Kambing Soon<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+      </div>
+    </div>
+  </footer>
+
+</div>
