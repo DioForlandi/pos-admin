@@ -6,7 +6,7 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($$rootScope) {
+  function runBlock($rootScope) {
 
     $rootScope.$on('$viewContentLoaded', function(event, next) {
       componentHandler.upgradeAllRegistered();
