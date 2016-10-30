@@ -13,12 +13,12 @@
         templateUrl: 'app/layout/layout.html'
       })
 
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/layout.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      })
+      // .state('home', {
+      //   url: '/',
+      //   templateUrl: 'app/main/layout.html',
+      //   controller: 'MainController',
+      //   controllerAs: 'main'
+      // })
 
       .state('layout.dashboard',{
         url: '/dashboard',
@@ -48,7 +48,7 @@
         controllerAs: 'vm'
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/dashboard');
   }
 
 })();

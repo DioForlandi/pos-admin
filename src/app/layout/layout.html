@@ -1,9 +1,9 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
 
-  <header class="mdl-layout__header">
+  <header class="mdl-layout__header mdl-color--orange-400">
 
     <div class="mdl-layout__header-row" style="padding-right:0px">
-    <span class="mdl-layout-title">{{pageTitle}}</span>
+    <span class="mdl-layout-title mdl-color-text--white">{{pageTitle}}</span>
     <div class="mdl-layout-spacer"></div>
       <button id="demo-menu-lower-right"
       class="mdl-button mdl-js-button mdl-button--icon">
@@ -23,8 +23,15 @@
 </ul>
 </header>
 
-<div class="mdl-layout__drawer">
-  <span class="mdl-layout-title">Navigations</span>
+<div class="mdl-layout__drawer" style="border-right:transparent">
+  <!-- <span class="mdl-layout-title mdl-color--orange-400" style="padding-top:70px">Navigations</span> -->
+  <div class="demo-drawer-header mdl-color--orange-400">
+    <h2 class="mdl-color-text--white">POS App</h2>
+    <!-- <img class="demo-avatar" src="assets/images/user.jpg">
+    <div class="demo-avatar-dropdown">
+      <span>hello@example.com</span>
+    </div> -->
+  </div>
   <nav class="mdl-navigation">
     <a class="mdl-navigation__link" ui-sref="layout.cashier"><i class="material-icons" style="vertical-align:middle;margin-right:20px">add_shopping_cart</i> Cashier</a>
     <a class="mdl-navigation__link" ui-sref="layout.menu"><i class="material-icons" style="vertical-align:middle;margin-right:20px">restaurant_menu</i> Menu</a>
@@ -37,12 +44,12 @@
     <ui-view></iu-view>
   </main>
 
-  <footer class="mdl-mini-footer">
+  <!-- <footer class="mdl-mini-footer">
     <div class="mdl-mini-footer__right-section">
       <div class="mdl-logo">
         Kambing Soon<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
       </div>
     </div>
-  </footer>
+  </footer> -->
 
 </div>
