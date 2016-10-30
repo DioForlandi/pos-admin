@@ -6,10 +6,9 @@
     .controller('DashboardController', DashboardController);
 
   /** @ngInject */
-  function DashboardController() {
+  function DashboardController($scope) {
     var vm = this;
-
-    vm.message = 'Dashboard';
-    vm.hello = 'hello';
+    $scope.$parent.pageTitle = 'Dashboard';
+    
   }
 })();

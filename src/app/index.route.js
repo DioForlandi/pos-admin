@@ -15,7 +15,7 @@
 
       .state('home', {
         url: '/',
-        templateUrl: 'app/main/main.html',
+        templateUrl: 'app/main/layout.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
@@ -31,6 +31,20 @@
         url: '/cashier',
         templateUrl: 'app/cashier/cashier.html',
         controller: 'CashierController',
+        controllerAs: 'vm'
+      })
+
+      .state('layout.menu',{
+        url: '/menu',
+        templateUrl: 'app/menu/menu.html',
+        controller: 'MenuController',
+        controllerAs: 'vm'
+      })
+
+      .state('layout.employee',{
+        url: '/employee',
+        templateUrl: 'app/employee/employee.html',
+        controller: 'EmployeeController',
         controllerAs: 'vm'
       });
 

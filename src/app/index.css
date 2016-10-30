@@ -42,6 +42,11 @@ main {
   background: #fafafa;
 }
 
+.mdl-navigation__link {
+    font-weight: 600!important;
+    font-size: 14px!important;
+}
+
 .acme-card-wide.mdl-card {
   width: 100%;
 }
