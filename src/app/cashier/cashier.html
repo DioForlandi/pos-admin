@@ -1,32 +1,103 @@
 <div class="mdl-grid">
-	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-focused">
-   		<select id="notable";style="margin-top:40px ;" class="mdl-textfie-ld__input">
-   			<option value="" selected></option>
-  			<option value="table1">Table 1</option>
-  			<option value="table2">Table 2</option>
-  			<option value="table3">Table 3</option>
-  			<option value="table4">Table 4</option>
-  			<option value="table5">Table 5</option>
-  			<option value="table6">Table 6</option>
-  			<option value="table7">Table 7</option>
-  			<option value="table8">Table 8</option>
-  			<option value="table9">Table 9</option>
-  			<option value="table10">Table 10</option>
-		</select>
-    <label class="mdl-textfield__label" for="notable">No Table</label>
+	<div class="mdl-cell mdl-cell--2-col">
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-focused">
+			<select id="tableNumber" class="mdl-textfield__input">
+				<option value="" selected></option>
+				<option value="table1">Table 1</option>
+				<option value="table2">Table 2</option>
+				<option value="table3">Table 3</option>
+				<option value="table4">Table 4</option>
+				<option value="table5">Table 5</option>
+				<option value="table6">Table 6</option>
+				<option value="table7">Table 7</option>
+				<option value="table8">Table 8</option>
+				<option value="table9">Table 9</option>
+				<option value="table10">Table 10</option>
+			</select>
+			<label class="mdl-textfield__label" for="tableNumber">Table Number</label>
+		</div>
 	</div>
-  	<div class="mdl-cell mdl-cell--6-col">
-	  	<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="margin-top:15px">
+	<div class="mdl-cell mdl-cell--2-col" style="padding-top: 12px">
+		<button class="mdl-button mdl-js-button mdl-button--raised">
+			Search
+		</button>
+	</div>
+</div>
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--12-col">
+		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%">
 			<thead>
-	    		<tr>
-	      			<th class="mdl-data-table__cell--non-numeric">No</th>
-	      			<th>Menu</th>
-	      			<th>Price</th>
-	    		</tr>
+				<tr>
+					<th class="mdl-data-table__cell--numeric" style="width:5%">No</th>
+					<th class="mdl-data-table__cell--non-numeric"style="width:35%">Nama Menu</th>
+					<th class="mdl-data-table__cell--non-numeric" style="width:10%">Quantity</th>
+					<th class="mdl-data-table__cell--numeric" style="width:25%">Unit price</th>
+					<th class="mdl-data-table__cell--numeric" style="width:25%">Subtotal</th>
+				</tr>
 			</thead>
 			<tbody>
-	  		
-	  		</tbody>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric" colspan="4">TOTAL</td>
+					<td class="mdl-data-table__cell--numeric" value="total"></td>
+				</tr>
+			</tbody>
 		</table>
+	</div>
+</div>
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--2-col">
+		<form action="#">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+				<label class="mdl-textfield__label" for="sample4">Discount</label>
+				<span class="mdl-textfield__error">Salah Input!!</span>
+			</div>
+		</form>
+	</div>
+	<div class="mdl-cell mdl-cell--2-col"></div>
+	<div class="mdl-cell mdl-cell--2-col">
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-focused">
+			<select id="paymentMethod" class="mdl-textfield__input">
+				<option value="" selected></option>
+				<option value="table1">Cash</option>
+				<option value="table2">Debit</option>
+			</select>
+			<label class="mdl-textfield__label" for="paymentMethod">Payment Method</label>
+		</div>
+	</div>
+	<div class="mdl-cell mdl-cell--2-col"></div>
+	<div class="mdl-cell mdl-cell--4-col">
+		<div>
+			<h4 style="margin-top:18px ; float:right" id="grandTotal">Grand Total : Rp. 0.00</h4>
+		</div>
+	</div>
+</div>
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--2-col">
+		<form action="#">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+				<label class="mdl-textfield__label" for="sample4">Payment</label>
+				<span class="mdl-textfield__error">Salah Input!!</span>
+			</div>
+		</form>
+	</div>
+	<div class="mdl-cell mdl-cell--6-col"></div>
+	<div class="mdl-cell mdl-cell--4-col">
+		<div>
+			<h4 style="margin-top:18px ; float:right" id="change">Change : Rp. 0.00</h4>
+		</div>
+	</div>
+</div>
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--1-col" style="padding-top: 12px">
+		<button class="mdl-button mdl-js-button mdl-button--raised">
+			Done
+		</button>
+	</div>
+	<div class="mdl-cell mdl-cell--1-col" style="padding-top: 12px">
+		<button class="mdl-button mdl-js-button mdl-button--raised">
+			Refresh
+		</button>
 	</div>
 </div>
