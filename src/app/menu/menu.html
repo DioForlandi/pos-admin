@@ -1,32 +1,29 @@
 <div class="mdl-grid">
-	<div class="mdl-cell mdl-cell--4-col">
-		<div>
-			<h4>Daftar Menu Kambing Soon</h4>
-		</div>
-	</div>
+	<button class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised" ui-sref="layout.menuform">Create</button>
 </div>
-<div class="mdl-grid">
-	<div class="mdl-cell mdl-cell--12-col">
-		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%">
-			<thead>
-				<tr>
-					<th class="mdl-data-table__cell--numeric" style="width:5%">No</th>
-					<th class="mdl-data-table__cell--non-numeric"style="width:35%">Nama Menu</th>
-					<th class="mdl-data-table__cell--non-numeric" style="width:10%">Kategori</th>
-					<th class="mdl-data-table__cell--numeric" style="width:25%">Harga</th>
-					<th class="mdl-data-table__cell--numeric" style="width:25%">Deskripsi</th>
-				</tr>
-			</thead>
-			<tbody>
 
-			</tbody>
-		</table>
-	</div>
-</div>
-<div class="mdl-grid">
-	<div class="mdl-cell mdl-cell--2-col">
-		<button class="mdl-button mdl-js-button mdl-button--raised">
-			View  <i class="material-icons" style="padding-bottom:4px">remove_red_eye</i>
-		</button>
-	</div>
+<br>
+<div class="mdl-cell mdl-cell--12-col" ng-init="vm.loadMenus()">
+	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Category</th>
+				<th>Menu Name</th>
+				<th style="width:30%">Image</th>
+				<th>Price</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="menu in vm.menus">
+				<td>{{menu.id}}</td>
+				<td>{{menu.category.categoryName}}</td>
+				<td>{{menu.menuName}}</td>
+				<td><img src="{{menu.imageUrl}}" style="width:50%;padding-bottom:10px"/></td>
+				<td>{{menu.price | currency:''}}</td>
+				<td>{{menu.description}}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>

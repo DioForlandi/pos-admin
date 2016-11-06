@@ -41,6 +41,13 @@
         controllerAs: 'vm'
       })
 
+      .state('layout.menuform',{
+        url: '/menu/form',
+        templateUrl: 'app/menu/menu-form.html',
+        controller: 'MenuController',
+        controllerAs: 'vm'
+      })
+
       .state('layout.employee',{
         url: '/employee',
         templateUrl: 'app/employee/employee.html',
