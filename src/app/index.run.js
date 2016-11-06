@@ -28,6 +28,15 @@
         subtree: true
     });
 
+    var pusher = new Pusher('370734f1f09b6e884fcd', {
+      encrypted: true
+    });
+
+    var channel = pusher.subscribe('bill_request_channel');
+    channel.bind('bill_request', function(data) {
+      alert(data.message);
+    });
+
   }
 
 })();

@@ -1,13 +1,39 @@
-<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-	<select class="mdl-textfield__input" type="text" id="category" />
-	<label class="mdl-textfield__label" for="category">Category</label>
-</div>
-<br>
-<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-	<select class="mdl-textfield__input" type="text" id="parentMenu" />
-	<label class="mdl-textfield__label" for="parentMenu">Parent Menu</label>
-</div>
-<br>
-<button class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised">
-	Save
-</button>
+<form enctype="multipart/form-data" method="POST" name="form" ng-submit="vm.save()">
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<select ng-init="vm.loadCategories()" id="category" class="mdl-textfield__input" ng-model="vm.category" ng-options="category as category.categoryName for category in vm.categories">
+		</select>
+		<label class="mdl-textfield__label" for="category">Category</label>
+	</div>
+	<br>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<select ng-init="vm.loadParentMenus()" ng-model="vm.parentMenuId" class="mdl-textfield__input">
+			<option selected>none</option>
+			<option ng-repeat="parentMenu in vm.parentMenus" ng-value="parentMenu.id" ng-selected="$first">{{parentMenu.menuName}}</option>
+		</select>
+		<label class="mdl-textfield__label" for="parentMenu">Parent Menu</label>
+	</div>
+	<br>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<input type="text" class="mdl-textfield__input" ng-model="vm.menu.menuName" type="text" id="menuName" />
+		<label class="mdl-textfield__label" for="menuName">Menu Name</label>
+	</div>
+	<br>
+	<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--orange-400 mdl-color-text--white" type="file" ngf-select="vm.uploadFiles($file, $invalidFiles)"
+	accept="image/*"><i class="material-icons">cloud_upload</i> &nbsp;Image file </button>
+	<div style="font:smaller">File: {{vm.imageFile.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+	<br>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<input class="mdl-textfield__input" ng-model="vm.menu.price" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="price">
+		<label class="mdl-textfield__label" for="price">Price</label>
+		<span class="mdl-textfield__error">Input is not a number!</span>
+	</div>
+	<br>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<input type="text" class="mdl-textfield__input" ng-model="vm.menu.description" type="text" id="menuName" />
+		<label class="mdl-textfield__label" for="menuName">Description</label>
+	</div>
+	<br>
+	<button type="submit" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--primary mdl-button--raised">
+		 Save
+	</button>
+</form>
