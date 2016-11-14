@@ -9,7 +9,7 @@
 		var vm = this;
 		$scope.$parent.pageTitle = 'Menu';
 
-		vm.menu = {parentId: null,menuName: null,price: null,description:null,categoryId:null};
+		vm.menu = {parentId: null,menuName: null,price: 0,description:null,categoryId:null};
 		vm.categories = [];
 		vm.menus = [];
 		vm.parentMenus = [];
@@ -49,6 +49,9 @@
 
 		vm.save = function(){
 			vm.menu.categoryId = vm.category.id;
+			if(vm.parentMenuId == 'none'){
+				vm.parentMenuId = null;
+			}
 			vm.menu.parentId = vm.parentMenuId;
 			$log.info('REQUEST: '+angular.toJson(vm.menu));
 

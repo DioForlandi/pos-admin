@@ -10,7 +10,7 @@
     	}
 
         this.getParentMenus = function(){
-            return $http.get(BASE_URL+'/menu/getParentMenu');
+            return $http.get(BASE_URL+'/menu/getAllParentMenu');
         }
 
     	this.save = function (imageFile,requestData){
