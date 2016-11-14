@@ -55,7 +55,7 @@
         controllerAs: 'vm'
       });
 
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/cashier');
   }
 
 })();

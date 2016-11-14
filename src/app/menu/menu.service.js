@@ -3,7 +3,7 @@
 
   angular
     .module('adminApp')
-    .service('menuService',['$http','BASE_URL','formDataObject',function ($http,BASE_URL,formDataObject){
+    .service('menuService',['$http','BASE_URL',function ($http,BASE_URL){
 
     	this.getMenus = function(){
     		return $http.get(BASE_URL+'/menu/getAll');

@@ -6,7 +6,7 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($rootScope) {
+  function runBlock($rootScope,toastr) {
 
     $rootScope.$on('$viewContentLoaded', function(event, next) {
       componentHandler.upgradeAllRegistered();
@@ -28,13 +28,14 @@
         subtree: true
     });
 
+    // --- Push notification using pusher, simpler than firebase
     var pusher = new Pusher('370734f1f09b6e884fcd', {
       encrypted: true
     });
 
     var channel = pusher.subscribe('bill_request_channel');
     channel.bind('bill_request', function(data) {
-      alert(data.message);
+      toastr.info(data.message,'Notification');
     });
 
   }
