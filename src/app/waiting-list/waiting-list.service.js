@@ -14,6 +14,7 @@
     return $http.post(BASE_URL+'/waitingList/save',jsonData);
 
   }
+  
 
   this.remove = function(id)
   {
