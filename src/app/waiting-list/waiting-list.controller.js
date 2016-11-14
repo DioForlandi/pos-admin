@@ -12,8 +12,7 @@
 		vm.guestCount = '';
 		vm.waitingList = {guestName: null,guestCount: null};
 		vm.waitingLists = [];
-		vm.id = 0;
-		//vm.user = {id: null, fullName: null, username: null, password: null};
+				//vm.user = {id: null, fullName: null, username: null, password: null};
 		//vm.tables = ['table1','table2','table3','table4','table5','table6','table7','table8','table9'];
 		
 		vm.save = function()

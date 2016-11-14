@@ -48,14 +48,36 @@
         controllerAs: 'vm'
       })
 
-      .state('layout.employee',{
-        url: '/employee',
-        templateUrl: 'app/employee/employee.html',
-        controller: 'EmployeeController',
+      .state('layout.user',{
+        url: '/user',
+        templateUrl: 'app/user/user.html',
+        controller: 'UserController',
         controllerAs: 'vm'
+      })
+
+      .state('layout.userform',{
+        url:'/userform',
+        templateUrl : 'app/user/user-form.html',
+        controller : 'UserController',
+        controllerAs : 'vm'
+      })
+
+      .state('layout.waitinglist',{
+        url:'/waitinglist',
+        templateUrl : 'app/waiting-list/waiting-list.html',
+        controller :'WaitingListController',
+        controllerAs : 'vm',
+      })
+
+      .state('login',{
+        url: '/login',
+        templateUrl : 'app/login/login.html',
+        controller : 'LoginController',
+        controllerAs : 'vm',
       });
 
-    $urlRouterProvider.otherwise('/cashier');
+
+    $urlRouterProvider.otherwise('/login');
   }
 
 })();
