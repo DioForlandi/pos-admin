@@ -10,9 +10,10 @@
 				<th>ID</th>
 				<th>Category</th>
 				<th>Menu Name</th>
-				<th style="width:30%">Image</th>
+				<th>Image</th>
 				<th>Price</th>
 				<th>Description</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -20,9 +21,20 @@
 				<td>{{menu.id}}</td>
 				<td>{{menu.category.categoryName}}</td>
 				<td>{{menu.menuName}}</td>
-				<td><img src="{{menu.imageUrl}}" style="width:50%;padding-bottom:10px"/></td>
-				<td>{{menu.price | currency:''}}</td>
+				<td><img src="{{menu.imageUrl}}" style="width:100%;padding-bottom:10px"/></td>
+				<td >
+					<div class="mdl-textfield mdl-js-textfield" style="padding-top:0px;width:100px">
+						<input class="mdl-textfield__input" ng-model="menu.price" style="text-align:right" type="text" id="price">
+						<p style="display:none">{{menu.price}}</p>
+						<label class="mdl-textfield__label" for="price"></label>
+					</div>
+				</td>
 				<td>{{menu.description}}</td>
+				<td>
+					<button ng-click="vm.updatePrice(menu.id,menu.price)" class="mdl-button mdl-js-button mdl-button--accent mdl-button--icon">
+						<i class="material-icons">edit</i>
+					</button>
+				</td>
 			</tr>
 		</tbody>
 	</table>

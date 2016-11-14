@@ -3,9 +3,9 @@
 
 	angular
 	.module('adminApp')
-	.controller('MenuController',['$scope','$log','$state','menuService','Upload',MenuController])
+	.controller('MenuController',['$scope','$log','$state','menuService','Upload','$stateParams','$timeout',MenuController])
 
-	function MenuController($scope,$log,$state,menuService,Upload){
+	function MenuController($scope,$log,$state,menuService,Upload,$stateParams,$timeout){
 		var vm = this;
 		$scope.$parent.pageTitle = 'Menu';
 
@@ -40,6 +40,7 @@
 		vm.loadCategories = function(){
 			menuService.getCategories().then(function successCallback(response){
 				vm.categories = response.data;
+				vm.category = vm.menu.category;
 				$log.info(response);
 			},
 			function errorCallback(response){
@@ -68,7 +69,29 @@
 			vm.imageFile = file;
 			$scope.errFile = errFiles && errFiles[0];
 		}
+
+		// vm.updatePage = function(){
+		// 	$log.info($stateParams.menu);
+		// 	vm.menu = $stateParams.menu;
+		// 	vm.category = vm.menu.category;
+		// 	vm.parentMenuId = vm.parentId;
+		// }
 		
+		vm.updatePrice = function(id,price){
+			$log.info(id+" "+price);
+			menuService.updatePrice(id,price).then(function successCallback(response){
+				$log.info(response);
+				$timeout(function(){
+					vm.loadMenus();
+					
+				},500);
+				vm.menus = [];
+			},
+			function errorCallback(response){
+				$log.info(response);
+				alert('update failed');
+			});
+		}
 	}
 
 

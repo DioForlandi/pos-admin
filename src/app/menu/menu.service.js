@@ -34,6 +34,10 @@
     		return $http.get(BASE_URL+'/category/getAll');
     	}
 
+        this.updatePrice = function(id,price){
+            return $http.post(BASE_URL+"/menu/updatePrice?id="+id+"&price="+price);
+        }
+
     }]);
 
 })();

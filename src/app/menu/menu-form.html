@@ -1,11 +1,11 @@
-<form enctype="multipart/form-data" method="POST" name="form" ng-submit="vm.save()">
+<form ng-init="vm.updatePage()" enctype="multipart/form-data" method="POST" name="form" ng-submit="vm.save()">
 	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 		<select ng-init="vm.loadCategories()" id="category" class="mdl-textfield__input" ng-model="vm.category" ng-options="category as category.categoryName for category in vm.categories">
 		</select>
 		<label class="mdl-textfield__label" for="category">Category</label>
 	</div>
 	<br>
-	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-focused">
 		<select ng-init="vm.loadParentMenus()" ng-model="vm.parentMenuId" class="mdl-textfield__input">
 			<option selected>none</option>
 			<option ng-repeat="parentMenu in vm.parentMenus" ng-value="parentMenu.id" ng-selected="$first">{{parentMenu.menuName}}</option>

@@ -45,7 +45,10 @@
         url: '/menu/form',
         templateUrl: 'app/menu/menu-form.html',
         controller: 'MenuController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        params: {
+          menu: null
+        }
       })
 
       .state('layout.user',{
@@ -59,7 +62,7 @@
         url:'/userform',
         templateUrl : 'app/user/user-form.html',
         controller : 'UserController',
-        controllerAs : 'vm'
+        controllerAs : 'vm',
       })
 
       .state('layout.waitinglist',{
