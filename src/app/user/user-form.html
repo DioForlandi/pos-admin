@@ -1,0 +1,46 @@
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--4-col">
+		<form action="#">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" id="username" ng-model="vm.user.username">
+				<label class="mdl-textfield__label" for="username">Username</label>
+				<span class="mdl-textfield__error">Salah Input!!</span>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--4-col">
+		<form action="#">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" id="password" ng-model="vm.user.password">
+				<select id="tableNumber" ng-model="vm.tableNumber" class="mdl-textfield__input">
+					<option value="" selected></option>
+					<option value="1">Table 1</option>
+					<option value="2">Table 2</option>
+				</select>
+				<label class="mdl-textfield__label" for="tableNumber">Table Number</label>
+				<span class="mdl-textfield__error">Salah Input!!</span>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--4-col">
+		<form action="#">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" id="password" ng-model="vm.password">
+				<label class="mdl-textfield__label" for="password">Password</label>
+				<span class="mdl-textfield__error">Salah Input!!</span>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--2-col"></div>
+	<div class="mdl-cell mdl-cell--2-col">
+		<button class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised">
+			Submit  <i class="material-icons">group_work</i>
+		</button>
+	</div>
+</div>
