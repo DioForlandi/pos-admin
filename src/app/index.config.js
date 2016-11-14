@@ -18,7 +18,7 @@
     toastrConfig.progressBar = false;
     toastrConfig.tapToDismiss = true;
     toastrConfig.closeButton = true;
-    toastrConfig.autoDismiss false;
+    toastrConfig.autoDismiss = false;
 
   }
 
