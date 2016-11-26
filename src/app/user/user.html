@@ -1,25 +1,31 @@
 <div class="mdl-grid">
-	<button class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised" ui-sref="layout.userform">Sign Up</button>
+	<button class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised" ui-sref="layout.userform">Create</button>
 </div>
 
-<br>
-<div class="mdl-cell mdl-cell--12-col">
-	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Full Name</th>
-				<th>Username</th>
-				<th>Password</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="menu in vm.users">
-				<td>{{user.id}}</td>
-				<td>{{user.fullName}}</td>
-				<td>{{menu.username}}</td>
-				<td>{{menu.password}}</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--12-col">
+		<table ng-init="vm.load()" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%">
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Username</td>
+					<td>Password</td>
+					<td>Role</td>
+					<td>Action</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in vm.users">
+					<td>{{$index+1}}</td>
+					<td>{{user.username}}</td>
+					<td>{{user.password}}</td>
+					<td>{{user.role}}
+					<td>
+						<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent" ng-click="vm.remove($index,user.id)">
+							<i class="material-icons">close</i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>

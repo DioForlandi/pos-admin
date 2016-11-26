@@ -6,7 +6,7 @@
   .service('userService',['$http','BASE_URL',function ($http,BASE_URL){
 
    this.get = function(){
-    return $http.get(BASE_URL+'/User/get');
+    return $http.get(BASE_URL+'/User/getAll');
   }
 
   this.save = function(jsonData)

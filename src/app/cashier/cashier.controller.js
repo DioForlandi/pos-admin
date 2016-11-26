@@ -10,12 +10,23 @@
 		$scope.$parent.pageTitle = 'Cashier';
 		vm.message = 'test cashier';
 		vm.salesOrder = null;
-		//vm.tables = ['table1','table2','table3','table4','table5','table6','table7','table8','table9'];
-		vm.tableNumber = '';
-		vm.getOrders = function(){
-			cashierService.getByTable(vm.tableNumber).then(function successCalback(response){
+		vm.discount = '';
+		vm.grandTotal = '';
+		vm.payment = '';
+		vm.change = '';
+		vm.tables = ['1','2','3','4','5','6','7','8','9'];
+		vm.getOrders = function(table){
+			cashierService.getByTable(table).then(function successCalback(response){
 				$log.info(response);
 				vm.salesOrder = response.data;
+			},
+			function errorCallback(response){
+				$log.info(response);
+			});
+		};
+		vm.updateTable = function(table){
+			cashierService.update(table).then(function successCalback(response){
+				$log.info(response);
 			},
 			function errorCallback(response){
 				$log.info(response);
