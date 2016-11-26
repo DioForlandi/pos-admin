@@ -1,24 +1,22 @@
 <div class="mdl-grid">
-	<button class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised" ui-sref="layout.userform">Sign Up</button>
+	<button class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised" ui-sref="layout.userform">Create</button>
 </div>
 
 <br>
 <div class="mdl-cell mdl-cell--12-col">
-	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%">
+	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" ng-init="vm.load()">
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Full Name</th>
 				<th>Username</th>
-				<th>Password</th>
+				<th>Role</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="menu in vm.users">
+			<tr ng-repeat="user in vm.users">
 				<td>{{user.id}}</td>
-				<td>{{user.fullName}}</td>
-				<td>{{menu.username}}</td>
-				<td>{{menu.password}}</td>
+				<td>{{user.username}}</td>
+				<td>{{user.role}}</td>
 			</tr>
 		</tbody>
 	</table>

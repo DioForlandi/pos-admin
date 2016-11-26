@@ -3,14 +3,18 @@
 
 	angular
 	.module('adminApp')
-	.controller('LayoutController', LayoutController)
+	.controller('LayoutController',['$cookies','$state','$scope','$log',LayoutController])
 
-	function LayoutController($scope){
-		var vm = this;
+	function LayoutController($cookies,$state,$scope,$log){
 		$scope.pageTitle = '';
-		vm.message = 'test cashier';
+		$scope.userActive = angular.fromJson($cookies.get('userActive'));
+		
 
-		//vm.tables = ['table1','table2','table3','table4','table5','table6','table7','table8','table9'];
+		$scope.logout = function(){
+			$log.info('entering logout');
+			$cookies.remove('userActive');
+			$state.go('login');
+		}
 		
 	}
 

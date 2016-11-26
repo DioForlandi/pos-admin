@@ -10,7 +10,8 @@
     $stateProvider
       .state('layout',{
         abstract: true,
-        templateUrl: 'app/layout/layout.html'
+        templateUrl: 'app/layout/layout.html',
+        controller: 'LayoutController'
       })
 
       // .state('home', {
