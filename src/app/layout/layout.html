@@ -17,7 +17,7 @@
   <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
   for="demo-menu-lower-right">
   <!-- <li class="mdl-menu__item">Change Password</li> -->
-  <li class="mdl-menu__item" ui-sref="login">Logout</li>
+  <li class="mdl-menu__item" ng-click="logout()">Logout</li>
 </ul>
 </header>
 
@@ -32,9 +32,9 @@
     </div>
   </div>
   <nav class="mdl-navigation">
-    <a class="mdl-navigation__link" ui-sref="layout.cashier"><i class="material-icons" style="vertical-align:middle;margin-right:20px">add_shopping_cart</i> Cashier</a>
-    <a class="mdl-navigation__link" ui-sref="layout.menu"><i class="material-icons" style="vertical-align:middle;margin-right:20px">restaurant_menu</i> Menu</a>
-    <a class="mdl-navigation__link" ui-sref="layout.user"><i class="material-icons" style="vertical-align:middle;margin-right:20px">work</i> User</a>
+    <a class="mdl-navigation__link" ng-if="userActive.role == 'ADMIN'" ui-sref="layout.cashier"><i class="material-icons" style="vertical-align:middle;margin-right:20px" >add_shopping_cart</i> Cashier</a>
+    <a class="mdl-navigation__link" ng-if="userActive.role == 'ADMIN'" ui-sref="layout.menu"><i class="material-icons" style="vertical-align:middle;margin-right:20px">restaurant_menu</i> Menu</a>
+    <a class="mdl-navigation__link" ng-if="userActive.role == 'ADMIN'" ui-sref="layout.user"><i class="material-icons" style="vertical-align:middle;margin-right:20px">work</i> User</a>
     <a class="mdl-navigation__link" ui-sref="layout.waitinglist"><i class="material-icons" style="vertical-align:middle;margin-right:20px">group_add</i>Waiting List</a>
     </nav>
   </div>
