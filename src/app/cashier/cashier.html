@@ -49,10 +49,10 @@
 	<div class="mdl-cell mdl-cell--2-col"></div>
 	<div class="mdl-cell mdl-cell--2-col">
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-focused">
-			<select id="paymentMethod" class="mdl-textfield__input">
+			<select id="paymentMethod" ng-model="vm.paymentMethod" class="mdl-textfield__input">
 				<option value="" selected></option>
-				<option value="table1">Cash</option>
-				<option value="table2">Debit</option>
+				<option value="CASH">Cash</option>
+				<option value="DEBIT">Debit</option>
 			</select>
 			<label class="mdl-textfield__label" for="paymentMethod">Payment Method</label>
 		</div>
@@ -60,7 +60,7 @@
 	<div class="mdl-cell mdl-cell--2-col"></div>
 	<div class="mdl-cell mdl-cell--4-col">
 		<div>
-			<h4 style="margin-top:18px ; float:right" id="grandTotal" ng-model="vm.grandTotal">Grand Total : Rp. {{vm.salesOrder.totalGross-((vm.discount/100)*vm.salesOrder.totalGross) | currency:''}}</h4>
+			<h4 style="margin-top:18px ; float:right" id="grandTotal" ng-model="vm.grandTotal" ng-bind="vm.grandTotal-((vm.discount/100)*vm.grandTotal) | currency:'Rp. '">Grand Total :</h4>
 		</div>
 	</div>
 </div>
@@ -77,13 +77,13 @@
 	<div class="mdl-cell mdl-cell--6-col"></div>
 	<div class="mdl-cell mdl-cell--4-col">
 		<div>
-			<h4 style="margin-top:18px ; float:right" id="change" ng-model='vm.change'>Change : Rp. {{vm.payment-(vm.salesOrder.totalGross-((vm.discount/100)*vm.salesOrder.totalGross)) | currency:''}}</h4>
+			<h4 style="margin-top:18px ; float:right" id="change" ng-model='vm.change'>Change : Rp. {{vm.payment-vm.grandTotal | currency:''}}</h4>
 		</div>
 	</div>
 </div>
 <div class="mdl-grid">
 	<div class="mdl-cell mdl-cell--1-col" style="padding-top: 12px">
-		<button class="mdl-button mdl-js-button mdl-button--raised">
+		<button class="mdl-button mdl-js-button mdl-button--raised" ng-click="vm.paid()">
 			Done
 		</button>
 	</div>

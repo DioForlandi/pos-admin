@@ -9,8 +9,8 @@
     		 return $http.get(BASE_URL+"/salesOrder/getByTable?tableNumber="+tableNumber);
     	}
 
-    	this.update = function(tableNumber){
-    		return $http.post(BASE_URL+"salesOrder/update"+tableNumber)
+    	this.update = function(data){
+    		return $http.post(BASE_URL+"/salesOrder/update",data);
     	}
 
     }]);
