@@ -1,17 +1,13 @@
 <h3>Table Number</h3>
 <hr/>
-<div class="mdl-grid">
+<div class="mdl-grid" ng-init="vm.loadActiveTable()">
 	<div class="mdl-cell mdl-cell--1" ng-repeat="table in vm.tables">
-		<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button-colored" ng-click="vm.getOrders(table)">
+		<button class="{{vm.loadTable(table)}}" ng-click="vm.getOrders(table)">
 			Table {{table}}
 		</button>
 	</div>
 </div>
-<div class="mdl-grid">
-	<div class="mdl-cell mdl-cell--1">
-		<label></label>
-	</div>
-</div>
+
 <div class="mdl-grid">
 	<div class="mdl-cell mdl-cell--12-col">
 		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%">

@@ -13,6 +13,10 @@
     		return $http.post(BASE_URL+"/salesOrder/update",data);
     	}
 
+        this.getActiveTable = function(){
+            return $http.get(BASE_URL+"/salesOrder/tableActive");
+        }
+
     }]);
 
 })();
