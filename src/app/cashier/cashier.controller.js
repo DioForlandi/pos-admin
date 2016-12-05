@@ -3,9 +3,9 @@
 
 	angular
 	.module('adminApp')
-	.controller('CashierController',['$scope','$log','cashierService','FileSaver',CashierController])
+	.controller('CashierController',['$scope','$log','cashierService','FileSaver','$http',CashierController])
 
-	function CashierController($scope,$log,cashierService,FileSaver){
+	function CashierController($scope,$log,cashierService,FileSaver,$http){
 		var vm = this;
 		$scope.$parent.pageTitle = 'Cashier';
 		vm.message = 'test cashier';
@@ -66,17 +66,19 @@
 			vm.salesOrder.discount = vm.discount;
 			vm.salesOrder.paymentMethod = vm.paymentMethod;
 			vm.salesOrder.status = 'PAID';
+
 			cashierService.update(vm.salesOrder).then(function successCalback(response){
 				$log.info(response);
+				$log.info(response.headers());
+				var headContent = response.headers('Content-Disposition');
+				var result = headContent.split(';')[1].trim().split('=')[1];
+      			var fileName = result.replace(/"/g, '');
 
 				var date = new Date();
 				var minutes = date.getMinutes();
 				var hour = date.getHours();
-				var filename = 'STRUCT_'+date.getFullYear()+'_'+('0' + (date.getMonth() + 1)).slice(-2)+'_'+('0' + date.getDate()).slice(-2)+'_'+hour+'_'+minutes;
-				var blob = new Blob([response.data], {
-					type: 'application/pdf'
-				});
-				FileSaver.saveAs(blob, filename+".pdf");
+				var blob = new Blob([response.data],{type: "application/pdf"});
+				saveAs(blob, fileName);
 
 				vm.salesOrder = null;
 				vm.discount = 0;
@@ -87,9 +89,9 @@
 			function errorCallback(response){
 				$log.info(response);
 			});
-		};
-		
-	}
+};
+
+}
 
 
 })();

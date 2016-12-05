@@ -10,7 +10,7 @@
     	}
 
     	this.update = function(data){
-    		return $http.post(BASE_URL+"/salesOrder/update",data);
+    		return $http.post(BASE_URL+"/salesOrder/update",data,{ responseType: 'arraybuffer' });
     	}
 
         this.getActiveTable = function(){
